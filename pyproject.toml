@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "plague"
+version = "0.1.0"
+description = "PLAGUE: Plug-and-play Framework for Lifelong Adaptive Generation of Multi-turn Jailbreaks (ICLR 2026)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "CC-BY-4.0" }
+authors = [
+    { name = "Neeladri Bhuiya" },
+    { name = "Madhav Aggarwal", email = "aggarwal.madhav@gmail.com" },
+    { name = "Diptanshu Purwar" },
+]
+maintainers = [{ name = "A10 Networks, Inc." }]
+dependencies = [
+    "anthropic>=0.49.0",
+    "openai>=1.57.0",
+    "together>=1.4.1",
+    "google-genai>=1.10.0",
+    "google-generativeai>=0.8.4",
+    "python-dotenv>=1.0.1",
+    "datasets>=3.2.0",
+    "pandas>=2.0.0",
+    "numpy>=1.26.4",
+    "scikit-learn>=1.5.2",
+    "tqdm>=4.66.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/plague"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/plague", "scripts", "README.md"]
+
+[tool.ruff]
+ignore = ["E722"]
